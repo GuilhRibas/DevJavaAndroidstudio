@@ -52,10 +52,14 @@ public class ActivityFinal extends AppCompatActivity {
             }
         });
     }
-
-    private void abrirMain() {
-        Intent janelaR = new Intent(this, MainActivity.class);
-        startActivity(janelaR);
+    public void abrirMain() {
+        Intent janela = new Intent(this, MainActivity.class);
+        startActivity(janela);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Você não pode voltar!", Toast.LENGTH_LONG).show();
     }
 }
